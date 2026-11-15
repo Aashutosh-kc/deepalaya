@@ -1,7 +1,8 @@
 import './Whiteboard.css'
 import { useState,useRef, useEffect } from 'react'
-const CANVAS_HEIGHT = 500;
-const CANVAS_WIDTH = 500;
+import { Eraser,Brush, Pen, Undo,Trash } from 'lucide-react';
+const CANVAS_HEIGHT = 600;
+const CANVAS_WIDTH = 900;
 const COLORS = [
     "#000000", // Black
     "#6B7280", // Gray
@@ -23,7 +24,7 @@ export default function Whiteboard(){
     const canvasRef = useRef(null);
     const isDrawing = useRef(false);
     const [lineWidth,setLineWidth] = useState(3);
-    const [currentColor,setCurrentColor] = useState("black");
+    const [currentColor, setCurrentColor] = useState("#000000");
     const [tool,setTool] = useState('pencil');
     const history = useRef([])
 
@@ -38,8 +39,6 @@ export default function Whiteboard(){
         isDrawing.current = false;
         return;
     }
-
-    console.log(`x: ${x} ,y: ${y}`);
     const ctx = canvasRef.current.getContext('2d');
     ctx.lineTo(x,y);
     ctx.stroke();
@@ -109,7 +108,40 @@ useEffect(() => {
 }, []);
     return(
         <div className="whiteboard">
-            <canvas
+            <div className="header-sect">
+                <h1>Rangooli</h1>
+                <div className="main-btns">
+                    <button className="undo-btn" type="button" onClick={undo}><Undo />Undo</button>
+                    <button className="clear-btn" onClick={()=>clearCanvas()}><Trash />Clear</button>
+                </div>
+                
+            </div>
+            <aside className='tool-bar'>
+                <button className={tool === "pencil" ? "brush-btn active" : "brush-btn"} onClick={()=>{ setTool('pencil')}}><Brush />Pen</button>
+                <button className={tool === "eraser" ? "eraser-btn active" : "eraser-btn"} onClick={()=>{ setTool('eraser')}}><Eraser />Eraser</button>
+                <label>Size</label>
+                <input type='range' max={20} step={1} value={lineWidth} onChange={(e)=>setLineWidth(Number(e.target.value))}/>
+            <div className="color-palette">
+                <label>Colors:</label>
+            {COLORS.map((color) => (
+                <button
+                key={color}
+                className={`color-option ${currentColor === color ? 'active' : ''}`}
+                style={{ backgroundColor: color }}
+                onClick={() => setCurrentColor(color)}
+                title={color}
+                aria-label={`Select ${color}`}
+                />
+                ))}
+            </div>
+            <label className='color-label'>Custom color</label>
+            <input type='color' value={currentColor} onChange={(e)=>{
+                setCurrentColor(e.target.value);
+            }}/>
+
+            </aside>
+            <main className="rangoli-canvas">
+                <canvas
             height={CANVAS_HEIGHT}
             width={CANVAS_WIDTH}
             ref={canvasRef}
@@ -131,26 +163,9 @@ useEffect(() => {
             >
 
             </canvas>
-            <button className="pen-btn" onClick={()=>{ setTool('pencil')}}>Pen</button>
-            <button className="eraser-btn" onClick={()=>{ setTool('eraser')}}>Eraser</button>
-            <input type='range' max={20} step={1} value={lineWidth} onChange={(e)=>setLineWidth(Number(e.target.value))}/>
-            <div className="color-palette">
-        {COLORS.map((color) => (
-            <button
-            key={color}
-            className={`color-option ${currentColor === color ? 'active' : ''}`}
-            style={{ backgroundColor: color }}
-            onClick={() => setCurrentColor(color)}
-            title={color}
-            aria-label={`Select ${color}`}
-            />
-        ))}
-</div>
-            <input type='color' value={currentColor} onChange={(e)=>{
-                setCurrentColor(e.target.value);
-            }}/>
-            <button className="undo-btn" type="button" onClick={undo}>Undo</button>
-            <button className="clear-btn" onClick={()=>clearCanvas()}>Clear</button>
+            </main>
+            
+            
         </div>
     )
 }

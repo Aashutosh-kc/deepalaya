@@ -1,5 +1,16 @@
-:root{
-  --accent: #ffffff;
+:root {
+    --bg: #F6F5F2;
+    --surface: #FFFFFF;
+    --surface-muted: #EEEFF3;
+
+    --text: #24232B;
+    --text-muted: #74717F;
+
+    --border: #E5E3EA;
+
+    --accent: #7457D9;
+    --accent-hover: #6244C4;
+    --accent-soft: #F0ECFF;
 }
 *{
   box-sizing: border-box;
@@ -8,7 +19,11 @@
 }
 body{
   min-height: 100vh;
+  background-color: var(--bg);
 }
-input{
+input,label,button{
   font: inherit;
+}
+button{
+  cursor: pointer;
 }

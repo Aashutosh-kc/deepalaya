@@ -1,31 +1,129 @@
 .whiteboard{
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 16px;
+    padding: 20px;
+    background-color: var(--bg);
+    color: var(--text);
+}
+.whiteboard button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.header-sect{
+    grid-column: span 2;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+.header-sect h1{
+    font-size: 24px;
+}
+.main-btns {
+    display: flex;
+    gap: 10px;
+}
+.header-sect button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background-color: var(--surface-muted);
+    color: var(--text);
+}
+.header-sect button:hover {
+    background-color: var(--border);
+}
+.aside{
+    width: 220px;
+    padding: 20px;
+}
+.rangoli-canvas{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.canvas{
-    border: 0.5px solid;
+.tool-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
+.tool-bar label {
+    font-size: 14px;
+    font-weight: 500;
+}
+.tool-bar .brush-btn,.tool-bar .eraser-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: var(--surface-muted);
+    color: var(--text);
+}
+.tool-bar .brush-btn.active,.tool-bar .eraser-btn.active {
+    background-color: var(--accent);
+    color: white;
+}
+.tool-bar button:hover {
+    transform: translateY(-1px);
+}
+.tool-bar input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
 .color-palette {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+}
+.color-palette label {
+    flex-basis: 100%;
 }
 
 .color-option {
     width: 28px;
     height: 28px;
-    border: 2px solid #d1d5db;
+    padding: 0;
+    border: 2px solid var(--border);
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease;
 }
 
 .color-option:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .color-option.active {
-    outline: 2px solid #333;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
+}
+.rangoli-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: var(--surface-muted);
+    border-radius: 12px;
+    overflow: auto;
+}
+.canvas {
+    display: block;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
 }
