@@ -1,6 +1,6 @@
 import './Whiteboard.css'
 import { useState,useRef, useEffect } from 'react'
-import { Eraser,Brush, Pen, Undo,Trash } from 'lucide-react';
+import { Eraser,Brush, Pen, Undo,Trash, Download } from 'lucide-react';
 const CANVAS_HEIGHT = 600;
 const CANVAS_WIDTH = 900;
 const COLORS = [
@@ -103,6 +103,14 @@ function undo() {
         ctx.drawImage(img, 0, 0);
     };
 }
+function saveCanvas(){
+    const canvas = canvasRef.current;
+    const image = canvas.toDataURL("image/png")
+    const link = document.createElement('a');
+    link.download = "rangoli.png"
+    link.href = image;
+    link.click();
+}
 useEffect(() => {
     history.current.push(canvasRef.current.toDataURL());
 }, []);
@@ -113,6 +121,7 @@ useEffect(() => {
                 <div className="main-btns">
                     <button className="undo-btn" type="button" onClick={undo}><Undo />Undo</button>
                     <button className="clear-btn" onClick={()=>clearCanvas()}><Trash />Clear</button>
+                    <button className="download-btn" onClick={saveCanvas}><Download/> Save PNG</button>
                 </div>
                 
             </div>
