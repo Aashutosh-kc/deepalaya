@@ -1,0 +1,31 @@
+.whiteboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.canvas{
+    border: 0.5px solid;
+}
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.color-option {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.15);
+}
+
+.color-option.active {
+    outline: 2px solid #333;
+    outline-offset: 3px;
+}
