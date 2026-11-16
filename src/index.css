@@ -1,29 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 :root {
-    --bg: #F6F5F2;
-    --surface: #FFFFFF;
-    --surface-muted: #EEEFF3;
+    --font-display: "Baloo 2", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  /* ==============================
+     DEEPALAYA — CORE PALETTE
+  ============================== */
 
-    --text: #24232B;
-    --text-muted: #74717F;
+  --bg: #DECBB6;
+  --surface: #F5E8D5;
+  --surface-muted: #E9D8C2;
 
-    --border: #E5E3EA;
+  --text: #351B43;
+  --text-muted: #806B78;
 
-    --accent: #7457D9;
-    --accent-hover: #6244C4;
-    --accent-soft: #F0ECFF;
+  --border: #C9ADAB;
+
+  /* ==============================
+     PRIMARY BRAND COLORS
+  ============================== */
+
+  --primary: #4B1F6F;
+  --primary-light: #A23FD0;
+  --primary-hover: #381650;
+
+  --accent: #F0509B;
+  --accent-hover: #D93C83;
+  --accent-soft: #F9D5E7;
+
+  /* Navbar */
+  --nav-bg: #4B1F6F;
+  --nav-text: #FFF4E6;
+  --nav-muted: #E2CBEA;
+
+  /* ==============================
+     FESTIVE ILLUSTRATION PALETTE
+  ============================== */
+
+  --pack-pink: #F0509B;
+  --pack-pink-light: #FF9BC7;
+  --pack-purple: #A23FD0;
+  --pack-blue: #4A9BD9;
+  --pack-orange: #F7941D;
+  --pack-yellow: #FFD21F;
+  --pack-coral: #F0502F;
+  --pack-green: #4C9A2A;
+  --pack-outline: #4B1F6F;
+
+  /* ==============================
+     SUPPORTING COLORS
+  ============================== */
+
+  --forest-green: #417D24;
+  --forest-light: #6A9B3E;
+
+  --saffron: #F7AD37;
+  --marigold: #F59E0B;
+
+  --tika-red: #C1121F;
+  --peacock-teal: #0F8B8D;
+
+  /* ==============================
+     TEXT COLORS
+  ============================== */
+
+  --cream: #FFF4E6;
+  --cream-muted: #E2CBEA;
+
+  --white: #FFFFFF;
+  --house-wall: #F5E8D5;
+
+  /* ==============================
+     LIGHT & GLOW
+  ============================== */
+
+  --lamp-gold: #FFC83D;
+  --lamp-glow: #FFE9A8;
+
+  --lamp-glow-gradient: radial-gradient(
+    circle,
+    var(--lamp-glow) 0%,
+    var(--lamp-gold) 30%,
+    transparent 70%
+  );
+
+  /* ==============================
+     GRADIENTS
+  ============================== */
+
+  --gold-gradient: linear-gradient(
+    135deg,
+    #FFF0AE,
+    #FFD21F,
+    #F7941D
+  );
+
+  --sky-gradient: linear-gradient(
+    180deg,
+    #DECBB6,
+    #F5E8D5
+  );
+
+  --ground-gradient: linear-gradient(
+    180deg,
+    #A23FD0,
+    #4B1F6F
+  );
+
+  /* ==============================
+     UI EFFECTS
+  ============================== */
+
+  --shadow-soft: 0 4px 16px rgba(75, 31, 111, 0.10);
+  --shadow-card: 0 8px 28px rgba(75, 31, 111, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
 }
-*{
+
+/* ==============================
+   GLOBAL RESET
+============================== */
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-  min-height: 100vh;
-  background-color: var(--bg);
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
-input,label,button{
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+button,
+input,
+label,
+textarea {
   font: inherit;
 }
-button{
+
+button {
   cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--saffron);
+  outline-offset: 4px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+.brand-name {
+  font-family: var(--font-display);
 }

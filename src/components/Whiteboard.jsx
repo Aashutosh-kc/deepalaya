@@ -1,6 +1,6 @@
 import './Whiteboard.css'
 import { useState,useRef, useEffect } from 'react'
-import { Eraser,Brush, Pen, Undo,Trash, Download } from 'lucide-react';
+import { Eraser,Brush, Pen, Undo,Trash,ArrowLeft, Download } from 'lucide-react';
 const CANVAS_HEIGHT = 600;
 const CANVAS_WIDTH = 900;
 const COLORS = [
@@ -19,7 +19,7 @@ const COLORS = [
     "#EC4899", // Pink
     "#8B5CF6"  // Violet
 ];
-export default function Whiteboard(){
+export default function Whiteboard({onBack}){
     
     const canvasRef = useRef(null);
     const isDrawing = useRef(false);
@@ -122,6 +122,7 @@ useEffect(() => {
                     <button className="undo-btn" type="button" onClick={undo}><Undo />Undo</button>
                     <button className="clear-btn" onClick={()=>clearCanvas()}><Trash />Clear</button>
                     <button className="download-btn" onClick={saveCanvas}><Download/> Save PNG</button>
+                    <button type="button" onClick={onBack}><ArrowLeft />Back</button>
                 </div>
                 
             </div>
