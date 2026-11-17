@@ -27,6 +27,8 @@
   --accent-hover: #D93C83;
   --accent-soft: #F9D5E7;
 
+  --transition: 0.2s ease;
+
   /* Navbar */
   --nav-bg: #4B1F6F;
   --nav-text: #FFF4E6;

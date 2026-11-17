@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Deepalaya</title>
+  <desc id="desc">A traditional home sheltering a glowing diya flame, with lotus petals.</desc>
+  <g fill="#4B1F6F">
+    <!-- finial -->
+    <path d="M256 24c-7 20-17 33-17 47 0 10 7 17 17 17s17-7 17-17c0-14-10-27-17-47Z"/>
+    <path d="M224 102c0-7 7-12 15-12h34c8 0 15 5 15 12s-7 12-15 12h-34c-8 0-15-5-15-12Z"/>
+    <!-- roof, pillars and base as one strong architectural silhouette -->
+    <path d="M38 255 256 119l218 136c7 4 4 14-4 14h-39v132l35 17c8 4 5 15-4 15h-91l26-24V268L256 165 115 253v156l26 24H50c-9 0-12-11-4-15l35-17V269H42c-8 0-11-10-4-14Z"/>
+    <!-- lower inner bowl -->
+    <path d="M161 340c25 16 60 25 95 25s70-9 95-25c-7 37-42 65-95 65s-88-28-95-65Z"/>
+  </g>
+  <!-- flame -->
+  <path fill="#F7AD37" d="M256 178c-17 31-49 64-49 99 0 29 21 50 49 50s49-21 49-50c0-35-32-68-49-99Z"/>
+  <path fill="#F59E0B" d="M256 235c-10 19-23 34-23 53 0 17 10 29 23 29s23-12 23-29c0-19-13-34-23-53Z"/>
+  <!-- sparkles -->
+  <g fill="#F7AD37">
+    <path d="M143 263c4 13 9 18 22 22-13 4-18 9-22 22-4-13-9-18-22-22 13-4 18-9 22-22Z"/>
+    <path d="M369 263c4 13 9 18 22 22-13 4-18 9-22 22-4-13-9-18-22-22 13-4 18-9 22-22Z"/>
+  </g>
+  <!-- lotus petals -->
+  <g fill="#F0509B">
+    <path d="M139 382c48 5 85 29 102 73-45 0-82-21-102-73Z"/>
+    <path d="M373 382c-48 5-85 29-102 73 45 0 82-21 102-73Z"/>
+  </g>
+</svg>

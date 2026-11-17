@@ -1,1 +1,138 @@
-.house svg { width: min(420px, 90vw); }
+
+.house {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.house-art {
+  display: block;
+  width: min(100%, 650px);
+  height: auto;
+  overflow: visible;
+}
+
+.house-bulb {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: house-twinkle 1.8s ease-in-out infinite alternate;
+  animation-delay: var(--bulb-delay);
+}
+
+.house-bulb .bulb-glow {
+  transition: opacity 0.3s ease;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.house-bulb .bulb-core {
+  opacity: 0.9;
+}
+
+.house.lights-off .house-bulb {
+  animation: none;
+}
+
+.house.lights-off .bulb-glow {
+  opacity: 0.35;
+}
+
+.house.lights-off .bulb-core {
+  opacity: 0.2;
+}
+
+.house-window-glows {
+  transition: opacity 0.3s ease;
+}
+
+.house.lights-off .house-window-glows {
+  opacity: 0.15;
+}
+
+.diya-flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: diya-flicker 1.2s ease-in-out infinite alternate;
+}
+
+.house-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.house-toggle:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.house-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.house-toggle-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pack-yellow);
+  box-shadow: 0 0 8px var(--pack-yellow);
+}
+
+.house.lights-off .house-toggle-indicator {
+  background: var(--text-muted);
+  box-shadow: none;
+}
+
+@keyframes house-twinkle {
+  from {
+    opacity: 0.65;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes diya-flicker {
+  from {
+    transform: scaleY(0.92) rotate(-3deg);
+  }
+
+  to {
+    transform: scaleY(1.08) rotate(3deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .house {
+    max-width: 480px;
+  }
+
+  .house-toggle {
+    padding: 9px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .house-bulb,
+  .diya-flame {
+    animation: none;
+  }
+}

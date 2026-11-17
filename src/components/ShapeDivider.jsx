@@ -1,23 +1,46 @@
 
 export default function ShapeDivider() {
-  return (
-    <svg
-      className="shape-divider"
-      viewBox="0 0 1000 65"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M0 0 H1000 C850 0 850 30 650 30 Q530 30 500 60 Q470 30 350 30 C150 30 150 0 0 0 Z"
-        fill="#4B1F6F"
-      />
-      <path
-        d="M0 0 C150 0 150 30 350 30 Q470 30 500 60 Q530 30 650 30 C850 30 850 0 1000 0"
-        fill="none"
-        stroke="#F7AD37"
-        strokeWidth="2"
-      />
-    </svg>
-  );
+    return (
+        <svg
+            className="shape-divider"
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+            <path
+                d="
+                    M0 0
+                    H1440
+                    V28
+                    H900
+                    L850 44
+                    L820 28
+                    Q720 130 620 28
+                    L590 44
+                    L540 28
+                    H0
+                    Z
+                "
+                fill="var(--nav-bg)"
+            />
+            <path
+              d="
+                M0 28
+                H540
+                L590 44
+                L620 28
+                Q720 130 820 28
+                L850 44
+                L900 28
+                H1440
+              "
+              fill="none"
+              stroke="var(--saffron)"
+              strokeWidth="4"
+              strokeLinejoin="round"
+              vectorEffect="non-scaling-stroke"
+            />
+        </svg>
+    );
 }

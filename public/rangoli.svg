@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Blue petal (outermost) -->
+    <path id="blue-petal" d="M 0 -60 C 38 -82, 58 -135, 0 -180 C -58 -135, -38 -82, 0 -60 Z" 
+          fill="#5BA3D9" stroke="#3A7AB0" stroke-width="1.5"/>
+    
+    <!-- Purple petal -->
+    <path id="purple-petal" d="M 0 -48 C 32 -70, 50 -115, 0 -155 C -50 -115, -32 -70, 0 -48 Z" 
+          fill="#9B4DCA" stroke="#7A3AA0" stroke-width="1.5"/>
+    
+    <!-- Pink petal -->
+    <path id="pink-petal" d="M 0 -36 C 28 -55, 42 -95, 0 -130 C -42 -95, -28 -55, 0 -36 Z" 
+          fill="#E83E8C" stroke="#C2185B" stroke-width="1.5"/>
+    
+    <!-- Orange petal with yellow border -->
+    <path id="orange-petal" d="M 0 -20 C 24 -38, 36 -70, 0 -100 C -36 -70, -24 -38, 0 -20 Z" 
+          fill="#FF8C00" stroke="#FFD700" stroke-width="3.5"/>
+    
+    <!-- Yellow inner petal for accent -->
+    <path id="yellow-petal" d="M 0 -15 C 14 -26, 20 -48, 0 -70 C -20 -48, -14 -26, 0 -15 Z" 
+          fill="#FFD700"/>
+  </defs>
+  
+  <g transform="translate(200,200)">
+    
+    <!-- Outer blue petals (8) -->
+    <use href="#blue-petal" transform="rotate(0)"/>
+    <use href="#blue-petal" transform="rotate(45)"/>
+    <use href="#blue-petal" transform="rotate(90)"/>
+    <use href="#blue-petal" transform="rotate(135)"/>
+    <use href="#blue-petal" transform="rotate(180)"/>
+    <use href="#blue-petal" transform="rotate(225)"/>
+    <use href="#blue-petal" transform="rotate(270)"/>
+    <use href="#blue-petal" transform="rotate(315)"/>
+    
+    <!-- Purple petals (8) - offset by 22.5° -->
+    <use href="#purple-petal" transform="rotate(22.5)"/>
+    <use href="#purple-petal" transform="rotate(67.5)"/>
+    <use href="#purple-petal" transform="rotate(112.5)"/>
+    <use href="#purple-petal" transform="rotate(157.5)"/>
+    <use href="#purple-petal" transform="rotate(202.5)"/>
+    <use href="#purple-petal" transform="rotate(247.5)"/>
+    <use href="#purple-petal" transform="rotate(292.5)"/>
+    <use href="#purple-petal" transform="rotate(337.5)"/>
+    
+    <!-- Pink petals (8) -->
+    <use href="#pink-petal" transform="rotate(0)"/>
+    <use href="#pink-petal" transform="rotate(45)"/>
+    <use href="#pink-petal" transform="rotate(90)"/>
+    <use href="#pink-petal" transform="rotate(135)"/>
+    <use href="#pink-petal" transform="rotate(180)"/>
+    <use href="#pink-petal" transform="rotate(225)"/>
+    <use href="#pink-petal" transform="rotate(270)"/>
+    <use href="#pink-petal" transform="rotate(315)"/>
+    
+    <!-- Orange petals (8) - offset -->
+    <use href="#orange-petal" transform="rotate(22.5)"/>
+    <use href="#orange-petal" transform="rotate(67.5)"/>
+    <use href="#orange-petal" transform="rotate(112.5)"/>
+    <use href="#orange-petal" transform="rotate(157.5)"/>
+    <use href="#orange-petal" transform="rotate(202.5)"/>
+    <use href="#orange-petal" transform="rotate(247.5)"/>
+    <use href="#orange-petal" transform="rotate(292.5)"/>
+    <use href="#orange-petal" transform="rotate(337.5)"/>
+    
+    <!-- Yellow accent petals (8) -->
+    <use href="#yellow-petal" transform="rotate(0)"/>
+    <use href="#yellow-petal" transform="rotate(45)"/>
+    <use href="#yellow-petal" transform="rotate(90)"/>
+    <use href="#yellow-petal" transform="rotate(135)"/>
+    <use href="#yellow-petal" transform="rotate(180)"/>
+    <use href="#yellow-petal" transform="rotate(225)"/>
+    <use href="#yellow-petal" transform="rotate(270)"/>
+    <use href="#yellow-petal" transform="rotate(315)"/>
+    
+    <!-- Center circles -->
+    <circle cx="0" cy="0" r="30" fill="#FFCC00" stroke="#E6A800" stroke-width="2"/>
+    <circle cx="0" cy="0" r="18" fill="#FFE066"/>
+    <circle cx="0" cy="0" r="9" fill="#FFF8C0"/>
+  </g>
+</svg>
