@@ -1,0 +1,90 @@
+.rangoli-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 60px 56px 80px;
+  /* lamp glow behind the art, over the sky gradient from index.css */
+  background:
+    var(--lamp-glow-gradient) no-repeat 7.5% 50% / 60% 130%,
+    var(--sky-gradient);
+}
+
+.rangoli-card-art {
+  justify-self: center;
+  width: 100%;
+  max-width: 67%;
+  filter: drop-shadow(0 14px 24px rgba(75, 31, 111, 0.25));
+}
+
+/* the text becomes a framed panel: plum outline, hard offset shadow, dashed saffron trim */
+.rangoli-card-text {
+  padding: 44px 40px;
+  background: var(--surface);
+  border: 3px solid var(--primary);
+  border-radius: var(--radius-lg);
+  box-shadow: 10px 10px 0 var(--primary);
+  outline: 2px dashed var(--saffron);
+  outline-offset: -16px;
+}
+
+.rangoli-card-kicker {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.rangoli-card-text h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.rangoli-card-text p {
+  font-size: 20px;
+  max-width: 44ch;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.rangoli-card-text .rangoli-card-kicker {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.rangoli-card-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 4px 0 var(--accent-hover);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.rangoli-card-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 760px) {
+  .rangoli-card {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 60px;
+    background: var(--sky-gradient);
+  }
+  .rangoli-card-art {
+    max-width: 80%;
+  }
+  .rangoli-card-text {
+    padding: 32px 24px;
+    box-shadow: 6px 6px 0 var(--primary);
+  }
+}
