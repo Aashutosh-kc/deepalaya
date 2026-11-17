@@ -1,11 +1,41 @@
-.shape-divider {
+.divider {
+  --w: calc(var(--d, 170px) * 3.6);   /* pendant width */
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 1;
-  display: block;
+  display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 70px;
   margin-top: -1px;
   pointer-events: none;
+}
+
+.divider-pendant {
+  flex: none;
+  display: block;
+  width: var(--w);
+  height: auto;
+  overflow: visible;
+}
+
+.divider-side {
+  position: relative;
+  flex: 1;
+  height: calc(var(--w) * 0.055 + 2px);
+  background-color: var(--nav-bg);
+  border-bottom: 4px solid var(--saffron);
+}
+
+/* dotted line, same spacing and height as the one inside the pendant */
+.divider-side::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--w) * 0.0275 - 2px);
+  height: 4px;
+  background-image: radial-gradient(circle, var(--pack-pink) 1.6px, transparent 2px);
+  background-size: calc(var(--w) * 0.0225) 4px;
+  background-repeat: repeat-x;
 }

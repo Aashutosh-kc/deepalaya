@@ -1,6 +1,8 @@
 import './Header.css'
-import { MoveUpRight } from 'lucide-react'
+import { useState } from 'react'
+import { MoveUpRight, Menu, X } from 'lucide-react'
 import ShapeDivider from './ShapeDivider'
+import handDiya from '../assets/hand_diya.svg'
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -10,6 +12,8 @@ const links = [
 ]
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div className="header-wrap">
       <header className="header">
@@ -18,9 +22,18 @@ export default function Header() {
           <span className="app-name">Deepalaya</span>
         </a>
 
-        <nav className="nav-bar" aria-label="Main">
+        <nav
+          id="main-nav"
+          className={`nav-bar ${menuOpen ? 'open' : ''}`}
+          aria-label="Main"
+        >
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link">
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
               {link.label}
             </a>
           ))}
@@ -36,24 +49,21 @@ export default function Header() {
           <span>GitHub</span>
           <MoveUpRight size={18} />
         </a>
+
+        <button
+          type="button"
+          className="menu-btn"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
+        >
+          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </header>
+
       <ShapeDivider />
-      <svg className="divider-medallion" viewBox="-24 -24 48 48" aria-hidden="true">
-  <circle r="22" fill="var(--pack-yellow)" />
-  <circle r="19" fill="var(--pack-purple)" />
-  <circle r="13" fill="var(--pack-blue)" />
-  {[0, 60, 120, 180, 240, 300].map((angle) => (
-    <ellipse
-      key={angle}
-      cy="-9"
-      rx="3.5"
-      ry="6"
-      fill="var(--pack-pink)"
-      transform={`rotate(${angle})`}
-    />
-  ))}
-  <circle r="5" fill="var(--pack-yellow)" />
-</svg>
+      <img src={handDiya} alt="" className="divider-diya" />
     </div>
   )
 }
