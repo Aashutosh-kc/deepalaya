@@ -9,16 +9,17 @@ export default function App() {
   const [onSelect,setOnSelect]= useState("home");
   return (
     <div className="app">
+      <Header setOnSelect={setOnSelect}/>
       {onSelect === "home" && 
       <>
-        <Header setOnSelect={setOnSelect}/>
+        
         <Hero />
         <RangoliCard setOnSelect={setOnSelect}/>
         <FiveDaysCard setOnSelect={setOnSelect} />
       </>
     }
-    {onSelect === "maker" && <Whiteboard />}
-    {onSelect === "fivedays" && <FiveDays />}
+    {onSelect === "maker" && <Whiteboard setOnSelect={setOnSelect}/>}
+    {onSelect === "fivedays" && <FiveDays setOnSelect={setOnSelect}/>}
     </div>
     
     

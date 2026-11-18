@@ -22,7 +22,7 @@ function pointAt(i) {
 
 const points = days.map((_, i) => pointAt(i))
 
-export default function FiveDaysCard({ onSelect }) {
+export default function FiveDaysCard({ setOnSelect }) {
   return (
     <section className="days-card">
       <div className="days-card-text">
@@ -32,7 +32,7 @@ export default function FiveDaysCard({ onSelect }) {
           From crows and dogs to cows, light and siblings, each day of Tihar
           honours someone. Walk through them one by one.
         </p>
-        <button type="button" className="days-card-btn" onClick={() => onSelect('fivedays')}>
+        <button type="button" className="days-card-btn" onClick={() => setOnSelect('fivedays')}>
           Visit the five days
         </button>
       </div>

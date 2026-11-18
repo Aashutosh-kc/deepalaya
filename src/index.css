@@ -1,42 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 :root {
-    --font-display: "Baloo 2", sans-serif;
+  /* Typography */
+  --font-display: "Baloo 2", sans-serif;
   --font-body: "DM Sans", sans-serif;
-  /* ==============================
-     DEEPALAYA — CORE PALETTE
-  ============================== */
 
-  --bg: #DECBB6;
-  --surface: #F5E8D5;
-  --surface-muted: #E9D8C2;
+  /* Deepalaya editor */
+  --bg: #FFF9F0;
+  --surface: #FFFFFF;
+  --surface-muted: #F4E7FA;
 
   --text: #351B43;
   --text-muted: #806B78;
 
-  --border: #C9ADAB;
+  --border: #E8D9EB;
+/* Navbar */
+ --nav-bg: #4B1F6F;
+ --nav-text: #FFF4E6;
+ --nav-muted: #E2CBEA;
 
-  /* ==============================
-     PRIMARY BRAND COLORS
-  ============================== */
-
+  /* Primary brand */
   --primary: #4B1F6F;
   --primary-light: #A23FD0;
   --primary-hover: #381650;
---panel: #2E1245; 
+
+  --panel: #2E1245;
+
   --accent: #F0509B;
   --accent-hover: #D93C83;
-  --accent-soft: #F9D5E7;
+  --accent-soft: #FCE3F0;
 
-  --transition: 0.2s ease;
-
-  /* Navbar */
-  --nav-bg: #4B1F6F;
-  --nav-text: #FFF4E6;
-  --nav-muted: #E2CBEA;
-
-  /* ==============================
-     FESTIVE ILLUSTRATION PALETTE
-  ============================== */
+  /* Supporting colours */
+  --cream: #FFF4E6;
+  --cream: #FFF4E6;
+ --cream-muted: #E2CBEA;
+ --white: #FFFFFF;
+ --house-wall: #F5E8D5;
+  --saffron: #F7AD37;
+  --marigold: #F59E0B;
 
   --pack-pink: #F0509B;
   --pack-pink-light: #FF9BC7;
@@ -48,72 +48,26 @@
   --pack-green: #4C9A2A;
   --pack-outline: #4B1F6F;
 
-  /* ==============================
-     SUPPORTING COLORS
-  ============================== */
+  --editor-bg: #FFF8EF;
+  --editor-panel: #FFFFFF;
+  --editor-stage: #F9EAF7;
+  --editor-border: #EAD7E8;
+  --editor-active: #FCE0EE;
 
-  --forest-green: #417D24;
-  --forest-light: #6A9B3E;
+  --editor-purple: #4B1F6F;
+  --editor-pink: #F0509B;
+  --editor-orange: #F7941D;
+  --editor-yellow: #FFD21F;
+  --editor-blue: #4A9BD9;
+  --editor-green: #4C9A2A;
+  --editor-coral: #F0502F;
 
-  --saffron: #F7AD37;
-  --marigold: #F59E0B;
+  --editor-shadow: 0 5px 18px rgba(75, 31, 111, 0.09);
 
-  --tika-red: #C1121F;
-  --peacock-teal: #0F8B8D;
-
-  /* ==============================
-     TEXT COLORS
-  ============================== */
-
-  --cream: #FFF4E6;
-  --cream-muted: #E2CBEA;
-
-  --white: #FFFFFF;
-  --house-wall: #F5E8D5;
-
-  /* ==============================
-     LIGHT & GLOW
-  ============================== */
-
-  --lamp-gold: #FFC83D;
-  --lamp-glow: #FFE9A8;
-
-  --lamp-glow-gradient: radial-gradient(
-    circle,
-    var(--lamp-glow) 0%,
-    var(--lamp-gold) 30%,
-    transparent 70%
-  );
-
-  /* ==============================
-     GRADIENTS
-  ============================== */
-
-  --gold-gradient: linear-gradient(
-    135deg,
-    #FFF0AE,
-    #FFD21F,
-    #F7941D
-  );
-
-  --sky-gradient: linear-gradient(
-    180deg,
-    #DECBB6,
-    #F5E8D5
-  );
-
-  --ground-gradient: linear-gradient(
-    180deg,
-    #A23FD0,
-    #4B1F6F
-  );
-
-  /* ==============================
-     UI EFFECTS
-  ============================== */
-
-  --shadow-soft: 0 4px 16px rgba(75, 31, 111, 0.10);
-  --shadow-card: 0 8px 28px rgba(75, 31, 111, 0.12);
+  /* Effects */
+  --transition: 0.2s ease;
+  --shadow-soft: 0 3px 12px rgba(75, 31, 111, 0.07);
+  --shadow-card: 0 6px 22px rgba(75, 31, 111, 0.09);
 
   --radius-sm: 8px;
   --radius-md: 14px;

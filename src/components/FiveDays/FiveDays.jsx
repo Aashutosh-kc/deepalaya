@@ -1,4 +1,11 @@
 import "./FiveDays.css";
+import { ArrowLeft } from "lucide-react";
+import DayCard from "./DayCard";
+import crow from "../../assets/crow_card.png";
+import dog from "../../assets/dog_card.png";
+import cow from "../../assets/ox_card.png";
+import diya from "../../assets/laxmi.svg";
+import thali from "../../assets/vaitika.png";
 
 const days = [
   {
@@ -8,7 +15,9 @@ const days = [
     subtitle: "A message from the skies",
     description:
       "The festival begins by honouring crows, traditionally regarded as messengers. Families offer food to these birds as a gesture of respect and gratitude.",
-    tradition: "Food offerings are placed for crows."
+    tradition: "Food offerings are placed for crows.",
+    image: crow,
+    color: "var(--pack-pink-light)",
   },
   {
     number: "02",
@@ -17,7 +26,10 @@ const days = [
     subtitle: "Celebrating our loyal friends",
     description:
       "Dogs are celebrated for their loyalty and companionship. They receive flower garlands, a tika on their foreheads, and special treats.",
-    tradition: "Garlands, tika, and treats for dogs."  },
+    tradition: "Garlands, tika, and treats for dogs.",
+    image: dog,
+    color: "var(--saffron)",
+  },
   {
     number: "03",
     label: "THE THIRD DAY",
@@ -25,7 +37,10 @@ const days = [
     subtitle: "A home filled with light",
     description:
       "Cows are honoured during the day. As evening arrives, homes glow with oil lamps as families worship Goddess Laxmi and welcome prosperity.",
-    tradition: "Diyas, rangoli, lights, and Laxmi Puja."  },
+    tradition: "Diyas, rangoli, lights, and Laxmi Puja.",
+    image: cow,
+    color: "var(--pack-yellow)",
+  },
   {
     number: "04",
     label: "THE FOURTH DAY",
@@ -33,22 +48,33 @@ const days = [
     subtitle: "Honouring life and new beginnings",
     description:
       "Govardhan Puja celebrates the bond between people and nature. Mha Puja, observed by the Newar community, honours the self and marks a new beginning.",
-    tradition: "Celebrating nature, life, and the self."  },
+    tradition: "Celebrating nature, life, and the self.",
+    image: diya,
+    color: "var(--pack-blue)",
+  },
   {
     number: "05",
     label: "THE FIFTH DAY",
     name: "Bhai Tika",
     subtitle: "A bond that shines forever",
     description:
-      "The final day celebrates the bond between brothers and sisters. Sisters apply colourful tika, offer prayers for their brothers' wellbeing, and exchange gifts and blessings."
+      "The final day celebrates the bond between brothers and sisters. Sisters apply colourful tika, offer prayers for their brothers' wellbeing, and exchange gifts and blessings.",
+    image: thali,
+    color: "var(--accent-soft)",
   },
 ];
 
-export default function FiveDays() {
+export default function FiveDays({ setOnSelect }) {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div className="five-days">
+      <button type="button" className="days-back" onClick={() => setOnSelect("home")}>
+        <ArrowLeft size={18} />
+        Back
+      </button>
 
+      {days.map((day, i) => (
+        <DayCard key={day.number} day={day} reverse={i % 2 === 1} />
+      ))}
+    </div>
+  );
+}
