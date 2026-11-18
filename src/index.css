@@ -64,6 +64,34 @@
 
   --editor-shadow: 0 5px 18px rgba(75, 31, 111, 0.09);
 
+--lamp-gold: #FFC83D;
+ --lamp-glow: #FFE9A8;
+
+ --lamp-glow-gradient: radial-gradient(
+ circle,
+ var(--lamp-glow) 0%,
+ var(--lamp-gold) 30%,
+  transparent 70%
+ );
+
+
+  --gold-gradient: linear-gradient(
+  135deg,
+  #FFF0AE,
+  #FFD21F,
+  #F7941D
+  );
+
+ --sky-gradient: linear-gradient( 180deg,
+  #DECBB6,
+  #F5E8D5
+ );
+
+ --ground-gradient: linear-gradient(
+  180deg,
+  #A23FD0,
+  #4B1F6F
+ );
   /* Effects */
   --transition: 0.2s ease;
   --shadow-soft: 0 3px 12px rgba(75, 31, 111, 0.07);

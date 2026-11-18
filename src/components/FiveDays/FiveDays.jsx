@@ -69,7 +69,7 @@ export default function FiveDays({ setOnSelect }) {
     <div className="five-days">
       <button type="button" className="days-back" onClick={() => setOnSelect("home")}>
         <ArrowLeft size={18} />
-        Back
+      
       </button>
 
       {days.map((day, i) => (

@@ -1,6 +1,7 @@
 .whiteboard {
   min-height: 100vh;
   padding: 20px 24px;
+  padding-top: 55px;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -540,6 +541,7 @@
 @media (max-width: 650px) {
   .whiteboard {
     padding: 14px;
+    padding-top: 40px;
     gap: 16px;
   }
 
@@ -662,6 +664,7 @@
 @media (max-width: 380px) {
   .whiteboard {
     padding: 10px;
+    padding-top: 120px;
   }
 
   .wb-actions button {
@@ -712,6 +715,7 @@
     min-width: 0;
     box-sizing: border-box;
     padding: 14px;
+    padding-top: 60px;
     overflow-x: hidden;
   }
 
