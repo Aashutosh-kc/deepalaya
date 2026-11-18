@@ -5,6 +5,7 @@ import RangoliCard from "./components/RangoliCard";
 import FiveDaysCard from "./components/FiveDaysCard";
 import Whiteboard from "./components/Whiteboard";
 import FiveDays from "./components/FiveDays/FiveDays";
+import FootprintTrail from "./components/FootprintTrail";
 
 export default function App() {
   const [onSelect, setOnSelect] = useState("home");
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <div className="app">
       <Header setOnSelect={setOnSelect} />
-
+      <FootprintTrail screen={onSelect} />
       {onSelect === "home" && (
         <>
           <Hero />

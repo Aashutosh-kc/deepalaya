@@ -1,0 +1,60 @@
+.trail-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.trail-print {
+  position: absolute;
+  width: 26px;
+  height: auto;
+  opacity: 0;
+  animation: trail-fade 1.8s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  0% { opacity: 0; }
+  12% { opacity: 0.85; }
+  60% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+.trail-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 61;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 3px solid var(--primary);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: 4px 4px 0 var(--primary);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.trail-toggle.on {
+  background: var(--accent-soft);
+}
+
+.trail-toggle:hover {
+  transform: translateY(-2px);
+}
+
+@media (hover: none) {
+  .trail-toggle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-print {
+    animation-duration: 0.6s;
+  }
+}
