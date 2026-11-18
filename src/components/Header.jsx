@@ -5,22 +5,31 @@ import ShapeDivider from './ShapeDivider'
 import handDiya from '../assets/hand_diya.svg'
 
 const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'Days', href: '#days' },
-  { label: 'Playgrounds', href: '#playgrounds' },
-  { label: 'Countdown', href: '#countdown' },
+  { label: 'Home', screen: 'home', anchor: 'home' },
+  { label: 'Days', screen: 'fivedays', anchor: null },
+  { label: 'Playgrounds', screen: 'home', anchor: 'playgrounds' },
 ]
 
-export default function Header() {
+export default function Header({ setOnSelect }) {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  function go(screen, anchor) {
+    setOnSelect(screen)
+    setMenuOpen(false)
+    setTimeout(() => {
+      const target = anchor && document.getElementById(anchor)
+      if (target) target.scrollIntoView({ behavior: 'smooth' })
+      else window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 0)
+  }
 
   return (
     <div className="header-wrap">
       <header className="header">
-        <a href="#home" className="logo">
+        <button type="button" className="logo" onClick={() => go('home', 'home')}>
           <img src="/logo.svg" alt="" className="logo-icon" />
           <span className="app-name">Deepalaya</span>
-        </a>
+        </button>
 
         <nav
           id="main-nav"
@@ -28,14 +37,14 @@ export default function Header() {
           aria-label="Main"
         >
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <button
+              key={link.label}
+              type="button"
               className="nav-link"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => go(link.screen, link.anchor)}
             >
               {link.label}
-            </a>
+            </button>
           ))}
         </nav>
 

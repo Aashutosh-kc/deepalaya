@@ -3,7 +3,7 @@ import rangoliArt from '../assets/peacock_rangoli.png'
 
 export default function RangoliCard({ setOnSelect }) {
   return (
-    <section className="rangoli-card">
+    <section className="rangoli-card" id="playgrounds">
       <img src={rangoliArt} alt="A colourful rangoli pattern" className="rangoli-card-art" />
 
       <div className="rangoli-card-text">
