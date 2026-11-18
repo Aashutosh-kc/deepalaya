@@ -9,7 +9,7 @@ An interactive Tihar website: a decorated Nepali house, a rangoli maker you can 
 
 <img src="https://skillicons.dev/icons?i=react,vite,js,html,css,git,github,vercel,vscode" alt="Tech stack icons" />
 
-**[Live site](TODO-add-vercel-link)** · **Festival theme:** Tihar · Built for the KUCC Tihar & Chhath Web UI Design Contest 2026 (Advanced)
+**[Live site](https://deepalaya.vercel.app/)** · **Festival theme:** Tihar · Built for the KUCC Tihar & Chhath Web UI Design Contest 2026 (Advanced)
 
 </div>
 
