@@ -67,10 +67,10 @@ export default function Whiteboard({ setOnSelect }) {
 
   const [canUndo, setCanUndo] = useState(false)
   const [canRedo, setCanRedo] = useState(false)
-
-  function getCtx() {
-    return canvasRef.current.getContext('2d')
-  }
+  
+function getCtx() {
+  return canvasRef.current.getContext('2d', { willReadFrequently: true })
+}
 
   function fillBackground() {
     const ctx = getCtx()
