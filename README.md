@@ -17,7 +17,7 @@ An interactive Tihar website: a decorated Nepali house, a rangoli maker you can 
 
 | Home | Rangoli maker | Five days |
 | :---: | :---: | :---: |
-| ![Home page](previews\hero_card_preview.png) | ![Rangoli maker](previews\rangoli_card_preview.png) | ![Five days](previews\fiveday_card_preview.png) |
+| ![Home page](previews/hero_card_preview.png) |  ![Five days](previews/fiveday_card_preview.png) |![Rangoli maker](previews/rangoli_card_preview.png) |
 
 ## Concept
 
