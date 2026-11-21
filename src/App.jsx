@@ -6,7 +6,7 @@ import FiveDaysCard from "./components/FiveDaysCard";
 import Whiteboard from "./components/Whiteboard";
 import FiveDays from "./components/FiveDays/FiveDays";
 import FootprintTrail from "./components/FootprintTrail";
-
+import Countdown from "./components/Countdown";
 export default function App() {
   const [onSelect, setOnSelect] = useState("home");
 
@@ -28,6 +28,7 @@ export default function App() {
 
       {onSelect === "maker" && <Whiteboard setOnSelect={setOnSelect} />}
       {onSelect === "fivedays" && <FiveDays setOnSelect={setOnSelect} />}
+      {onSelect === "countdown" && <Countdown />}
     </div>
   );
 }

@@ -8,8 +8,8 @@ const links = [
   { label: 'Home', screen: 'home', anchor: 'home' },
   { label: 'Days', screen: 'fivedays', anchor: null },
   { label: 'Playgrounds', screen: 'home', anchor: 'playgrounds' },
+  { label: 'Countdown', screen: 'countdown', anchor: null },
 ]
-
 export default function Header({ setOnSelect }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
